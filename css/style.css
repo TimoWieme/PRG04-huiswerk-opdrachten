@@ -1,15 +1,72 @@
-@font-face {
+/* @font-face {
     font-family: kidsFont;
     src: url();
-}
+} */
 body{
     background-color: white;
 }
+
 .title{
     text-align: center;
-    font-family: kidsFont;
+    /* font-family: kidsFont; */
     font-size: 50px;
 }
 .start{
     text-align: center;
+}
+div{
+    box-sizing: border-box;
+    display: block;
+}
+#levelsDiv{
+    background-color:grey;
+	border:2px solid orange;
+    margin-top: 20px;
+    display: grid;
+    /* kolommen each fr is a card */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    /* rijen */
+    grid-auto-rows: max-content;
+    /* ruimte tussen rijen en kolommen */
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+.levelsBG{
+    border-radius:10px;
+    border-color: or;
+	display:inline-block;
+	font-family:Arial;
+	font-size:17px;
+	padding:18px 14px;
+	text-decoration:none;
+}
+@media (max-width: 880px) {
+    #cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 705px) {
+    #cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.levels {
+	border-radius:10px;
+    border-color: orange;
+	display:inline-block;
+    background-color:rgb(250, 249, 246);
+    cursor:pointer;
+	font-family:Arial;
+	font-size:17px;
+	padding:18px 14px;
+	text-decoration:none;
+}
+.levels:hover {
+	background-color:lightgreen;
+}
+.levels:active {
+	position:relative;
+	top:1px;
 }
