@@ -12,6 +12,11 @@ body{
     /* font-family: kidsFont; */
     font-size: 50px;
 }
+div{
+    box-sizing: border-box;
+    display: block;
+}
+
 /* Start Button */
 p{
     color: white;
@@ -50,10 +55,6 @@ p{
 	top: 5px;
 }
 
-div{
-    box-sizing: border-box;
-    display: block;
-}
 
 /* Levels */
 #levelsDiv{
