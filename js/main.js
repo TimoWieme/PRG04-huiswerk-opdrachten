@@ -7,6 +7,7 @@ const allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let checkCompleted = []
 let tempNumber;
 let levelPage;
+let levelRedirect = "Levels/level"
 
 
 function init(){
@@ -49,7 +50,7 @@ function playButton(e){
         //add 1 number to go to the next game
         tempNumber = checkCompleted.length + 1
         //add the number for the right page
-        levelPage = "level" + tempNumber
+        levelPage = levelRedirect + tempNumber
         //redirect to the page
         window.location.href = levelPage
     }
@@ -62,7 +63,7 @@ function level(e){
         //set the index of the button to a variable
         tempNumber = e.target.dataset.index
         //add the number for the right page
-        levelPage = "level" + tempNumber
+        levelPage = levelRedirect + tempNumber
         //redirect to the page
         window.location.href = levelPage
     }
