@@ -4,15 +4,23 @@
     <link rel="stylesheet" type="text/css" href="../../css/style.css"
     <meta charset="UTF-8">
     <title>Title</title>
+    <script defer src='js/game.js' type="module"></script>
+
 </head>
 <body>
 <h1 class = "title">level 1</h1>
 <img src="../../images/aap2.jpg" class="foto">
 
-<div class = "answer">
-<div><a href="#" class="answerButton">AA</a></div>
-<div><a href="#" class="answerButton">AH</a></div>
-<div><a href="#" class="answerButton">A</a></div>
+<div id="questions" class="answer">
+    <div>
+        <input type="button" class="answerButton" id="a">
+    </div>
+    <div>
+        <input type="button" class="answerButton" id="b">
+    </div>
+    <div>
+        <input type="button" class="answerButton" id="c">
+    </div>
 </div>
 <script src="main.js"> </script>
 </body>
