@@ -13,11 +13,15 @@ class Game {
 }
 new Game;
 function correct(e) {
+    const answerGiven = document.getElementById("answerGiven");
+    console.log(answerGiven);
     if (e.target.defaultValue == "AA") {
-        console.log("Succes");
+        console.log("Succes!!!");
+        answerGiven.innerText = "U heeft het goed";
     }
     else {
         console.log("Pech");
+        answerGiven.innerText = "Helaas";
     }
 }
 //# sourceMappingURL=game.js.map

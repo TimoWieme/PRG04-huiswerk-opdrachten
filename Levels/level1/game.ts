@@ -23,12 +23,16 @@ class Game {
 new Game
 
 function correct(e:any) {
+    const answerGiven =  document.getElementById("answerGiven")
+    console.log(answerGiven);
+    
     // console.log(e);
     if (e.target.defaultValue == "AA"){
-        console.log("Succes");
+        console.log("Succes!!!");
+        answerGiven!.innerText = "U heeft het goed"
     } else {
         console.log("Pech");
-        
+        answerGiven!.innerText = "Helaas"
     }
 }
 
