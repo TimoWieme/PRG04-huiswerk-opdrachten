@@ -23,16 +23,19 @@ class Game {
 new Game
 
 function correct(e:any) {
-    const answerGiven =  document.getElementById("answerGiven")
-    console.log(answerGiven);
+    const imggood = document.getElementById("good")!
+    const imgwrong = document.getElementById("wrong")!
     
     // console.log(e);
     if (e.target.defaultValue == "AA"){
         console.log("Succes!!!");
-        answerGiven!.innerText = "U heeft het goed"
+        imggood.style.display = "block"
+        imgwrong.style.display = "none"
+
     } else {
         console.log("Pech");
-        answerGiven!.innerText = "Helaas"
+        imgwrong.style.display = "block"
+        imggood.style.display = "none"
     }
 }
 
