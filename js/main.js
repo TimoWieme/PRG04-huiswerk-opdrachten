@@ -42,6 +42,7 @@ function createLevels(index){
     const levelDiv = document.createElement("button");
     //add card to the class list
     levelDiv.classList.add("levels")
+    levelDiv.classList.add("locked")
     levelDiv.classList.add(`${background[index]}`)
     //add a dataset with value from the For loop
     levelDiv.dataset.index = index + 1

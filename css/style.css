@@ -24,6 +24,10 @@ p{
 #start{
     text-align: center;
 }
+.tussenlevelBG{
+    background-repeat: no-repeat;
+}
+
 .play-button{
     margin: 0 auto;
     top: 25%;
@@ -171,3 +175,9 @@ row-gap: 10px;
 .ice{
     background-image: url("/images/ice.jpeg");
 }
+.locked {
+    background-image: url("/images/lock.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
