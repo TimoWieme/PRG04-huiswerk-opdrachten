@@ -1,0 +1,18 @@
+body, html {
+  background-image: url("/images/achtergrond-savanne.jpg");
+   /* Full height */
+   height: 100%; 
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+  margin: 0;
+}
+
+.title{
+  text-align: center;
+  font-size: 50px;
+  padding: 10px;
+  margin-top: 0px;
+  background-color: orange;
+}
