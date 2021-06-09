@@ -1,7 +1,6 @@
 // const webserviceURL = './webservices/index.php';
 
 class Game {
-    // questions : Questions = []
     div:HTMLElement
     answerA = document.getElementById("a")
     answerB = document.getElementById("b")
@@ -13,8 +12,6 @@ class Game {
         this.answerA!.setAttribute("value", "AA")
         this.answerB!.setAttribute("value", "A")
         this.answerC!.setAttribute("value", "OE")
-        // console.log(this.answerA);
-        // console.log(this.answerB);
         this.questions!.addEventListener("click", correct)
     }
 
@@ -31,7 +28,11 @@ function correct(e:any) {
         console.log("Succes!!!");
         imggood.style.display = "block"
         imgwrong.style.display = "none"
-
+        localStorage.setItem('levelsComplete', JSON.stringify(1));
+        setTimeout(function() {
+            location.href = "../../"
+        }, 3000)
+        //TODO Remove LocalStorage to go to the next level
     } else {
         console.log("Pech");
         imgwrong.style.display = "block"

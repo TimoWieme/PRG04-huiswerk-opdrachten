@@ -4,6 +4,7 @@ window.addEventListener("load", init)
 //all global variables
 const levelContainer = document.querySelector("#levelsDiv")
 const allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const background = ["ice", "savanne"]
 let checkCompleted = []
 let tempNumber;
 let levelPage;
@@ -20,6 +21,12 @@ function init(){
     startDiv.addEventListener("click", playButton)
     levels.addEventListener("click", level)
 
+    //Check if LocalStorage is available in the browser
+    if (typeof window.localStorage === "undefined") {
+        console.error('Local storage is not available in your browser');
+        return;
+    }
+
     levelsLoop()
 }
 
@@ -35,12 +42,19 @@ function createLevels(index){
     const levelDiv = document.createElement("button");
     //add card to the class list
     levelDiv.classList.add("levels")
+    levelDiv.classList.add(`${background[index]}`)
     //add a dataset with value from the For loop
     levelDiv.dataset.index = index + 1
     //add Text in levelDiv
     levelDiv.innerText = allLevels[index]
     //Append levelDiv to the levelContainer
     levelContainer.appendChild(levelDiv);
+
+    let storedString = localStorage.getItem('levelsComplete');
+    if(storedString) {
+        checkCompleted = storedString
+        console.log(checkCompleted)
+    }
 }
 
 function playButton(e){
@@ -52,6 +66,7 @@ function playButton(e){
         //add the number for the right page
         levelPage = levelRedirect + tempNumber
         //redirect to the page
+        console.log(checkCompleted.length)
         window.location.href = levelPage
     }
 }
