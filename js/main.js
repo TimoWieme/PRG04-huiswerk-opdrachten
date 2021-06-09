@@ -4,7 +4,7 @@ window.addEventListener("load", init)
 //all global variables
 const levelContainer = document.querySelector("#levelsDiv")
 const allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-const background = ["ice", "savanne"]
+const background = ["jungle", "ice"]
 let checkCompleted = []
 let tempNumber;
 let levelPage;

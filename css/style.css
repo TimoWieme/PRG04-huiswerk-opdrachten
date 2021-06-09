@@ -165,6 +165,9 @@ row-gap: 10px;
     margin-right: auto;
     width: 25%;
 }
+.jungle{
+    background-image: url("/images/jungle.jpeg");
+}
 .ice{
     background-image: url("/images/ice.jpeg");
 }
