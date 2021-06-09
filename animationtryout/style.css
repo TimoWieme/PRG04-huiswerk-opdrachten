@@ -1,0 +1,37 @@
+#wavingTiger {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: transparent url("../images/wavingtiger.png") 0 0 no-repeat;
+    animation: waving 1s steps(5) infinite;
+}
+
+@keyframes waving {
+    100% { background-position: -2000px 0px;}
+}
+
+#talkingTiger {
+    margin-left: 400px;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: transparent url("../images/talkingtiger.png") 0 0 no-repeat;
+    animation: talking 1s steps(4) infinite;
+}
+
+@keyframes talking {
+    100% { background-position: -1600px 0px;}
+}
+
+#talkingNwavingTiger {
+    margin-left: 800px;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: transparent url("../images/wavingNtalkingTiger.png") 0 0 no-repeat;
+    animation: talking 0.9s steps(4) infinite;
+}
+
+@keyframes talking {
+    100% { background-position: -1600px 0px;}
+}
