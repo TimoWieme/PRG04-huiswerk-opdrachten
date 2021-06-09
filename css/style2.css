@@ -1,0 +1,42 @@
+body, html {
+  background-image: url("/images/achtergrond-savanne.jpg");
+   /* Full height */
+   height: 100%; 
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+  margin: 0;
+}
+
+.title{
+  text-align: center;
+  font-size: 50px;
+  padding: 10px;
+  margin-top: 0px;
+  background-color: orange;
+}
+
+#talkingNwavingTiger {
+  margin-left: 1100px;
+  margin-top:-20px;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: transparent url("../images/wavingNtalkingTiger.png") 0 0 no-repeat;
+  animation: talking 0.9s steps(4) infinite;
+}
+
+@keyframes talking {
+  100% { background-position: -1600px 0px;}
+}
+
+.text {
+  margin: auto;
+  margin-top: 10em;
+  width: 50%;
+  border: 3px solid orange;
+  padding: 10px;
+  background-color: lightgray;
+  opacity: .8;
+}
