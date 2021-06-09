@@ -100,6 +100,12 @@ p{
 	font-size:17px;
 	padding:18px 14px;
 	text-decoration:none;
+    /* first = lock, seconds = background */
+    background-image: url(), url() ;
+    background-size: contain, cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 .levels:hover {
 	background-color:lightgreen;
@@ -164,10 +170,4 @@ row-gap: 10px;
     margin-left: auto;
     margin-right: auto;
     width: 25%;
-}
-.jungle{
-    background-image: url("/images/jungle.jpeg");
-}
-.ice{
-    background-image: url("/images/ice.jpeg");
 }
