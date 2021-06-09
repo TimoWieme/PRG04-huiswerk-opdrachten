@@ -19,6 +19,10 @@ function correct(e) {
         console.log("Succes!!!");
         imggood.style.display = "block";
         imgwrong.style.display = "none";
+        localStorage.setItem('levelsComplete', JSON.stringify(1));
+        setTimeout(function () {
+            location.href = "../../";
+        }, 3000);
     }
     else {
         console.log("Pech");
