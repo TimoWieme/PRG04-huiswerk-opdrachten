@@ -9,6 +9,23 @@ let currentLevel = 0
 let tempNumber;
 let levelPage;
 
+let webserviceURL = '.././webservice/includes/actions.php'
+let quoteURL = 'https://animechan.vercel.app/api/quotes/anime?title=naruto'
+
+
+function fetchQuestions(){
+    console.log("Fetching data");
+    fetch(quoteURL)
+        .then((response) => {
+            if (!response.ok) {
+               throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => console.log(data))
+        .catch(data => console.log(data))
+}
+
 function init(){
     console.log("Page is Loaded");
 
@@ -22,7 +39,7 @@ function init(){
         console.error('Local storage is not available in your browser');
         return;
     }
-
+    // fetchQuestions()
     checkProgress()
     levelsLoop()
 }
@@ -63,14 +80,9 @@ function createLevels(index){
         levelDiv.style.backgroundImage = `url(), url("${background[index]}")`
     }
     //Append levelDiv to the levelContainer
-    levelContainer.appendChild(levelDiv);
+    levelContainer.appendChild(levelDiv)
 }
 
-
-// function playButton(e){
-//     //TODO MAKE IT WORK
-//     //check if the play button is clicked
-// }
 
 function level(e){
     //check if the level button is clicked

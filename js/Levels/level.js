@@ -3,13 +3,15 @@ class Level {
     constructor() {
         this.completed = false;
         this.currentLevel = 0;
+        this.webserviceURL = '../webservice/index.php';
         this.answerA = document.getElementById("a");
         this.answerB = document.getElementById("b");
         this.answerC = document.getElementById("c");
-        this.questions = document.getElementById("questions");
+        this.questionsDiv = document.getElementById("questions");
         let storedstring = localStorage.getItem('currentLevel');
         console.log(storedstring);
         this.currentLevel = Number(storedstring);
+        this.fetchQuestions();
         switch (this.currentLevel) {
             case 0:
                 this.answerA.setAttribute("value", "AA");
@@ -24,11 +26,29 @@ class Level {
             default:
                 break;
         }
-        this.questions.addEventListener("click", (e) => this.correct(e));
-        console.log("Hallo");
+        this.questionsDiv.addEventListener("click", (e) => this.correct(e));
         if (storedstring) {
             let storedData = JSON.parse(storedstring);
         }
+    }
+    fetchQuestions() {
+        console.log("Fetching data");
+        fetch(this.webserviceURL)
+            .then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+            .then(data => console.log(data))
+            .catch(data => console.log(data));
+    }
+    succesHandler(data) {
+        let fetchedQuestions = data;
+        console.log(fetchedQuestions);
+    }
+    errorHandler(data) {
+        console.log(data);
     }
     correct(e) {
         const imggood = document.getElementById("good");
@@ -36,7 +56,7 @@ class Level {
         console.log(e);
         let knop = e.target;
         console.log(knop.defaultValue);
-        if (knop.defaultValue == "AA") {
+        if (knop.defaultValue == "AA" || knop.defaultValue == "OO") {
             console.log("Succes!!!");
             imggood.style.display = "block";
             imgwrong.style.display = "none";

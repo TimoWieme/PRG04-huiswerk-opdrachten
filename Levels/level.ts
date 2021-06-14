@@ -1,21 +1,26 @@
 class Level {
     completed = false
-    // aanpassen later
     currentLevel = 0
+
+    webserviceURL : string = '../webservice/index.php';
 
     div:HTMLElement
     answerA = document.getElementById("a")
     answerB = document.getElementById("b")
     answerC = document.getElementById("c")
 
-    questions = document.getElementById("questions")
+    questionsDiv = document.getElementById("questions")
 
     constructor() {
         let storedstring = localStorage.getItem('currentLevel')
         console.log(storedstring);
         this.currentLevel = Number(storedstring)
+        
 
-        //TODO LEVELS OPHALEN
+        //TODO GET THE QUESTIONS 
+        this.fetchQuestions()
+        
+        
         switch (this.currentLevel) {
             //letters aanpassen 
             case 0:
@@ -31,17 +36,37 @@ class Level {
             default:
                 break;
         }
-
         
-        this.questions!.addEventListener("click", (e:MouseEvent) => this.correct(e))
-
-        console.log("Hallo");
-        
+        this.questionsDiv!.addEventListener("click", (e:MouseEvent) => this.correct(e))        
         
         if (storedstring){
             let storedData = JSON.parse(storedstring)
             // More Code ...
         }
+    }
+
+    //TODO Fix fetch Error
+    fetchQuestions(){
+        console.log("Fetching data");
+        fetch(this.webserviceURL)
+            .then((response) => {
+                if (!response.ok) {
+                   throw new Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => console.log(data))
+            .catch(data => console.log(data))
+        // .then(this.succesHandler)
+        // .catch(this.errorHandler)
+    }
+    succesHandler(data: any) {
+        let fetchedQuestions = data
+        console.log(fetchedQuestions);
+    }
+
+    errorHandler(data:any){
+        console.log(data);
     }
 
     correct(e:MouseEvent) {
@@ -51,12 +76,11 @@ class Level {
         let knop = e.target as HTMLInputElement
         console.log(knop.defaultValue)
         //TODO ARRAY OF RIGHT ANSWERS
-        if (knop.defaultValue == "AA"){
+        if (knop.defaultValue == "AA" || knop.defaultValue == "OO"){
             console.log("Succes!!!");
             imggood.style.display = "block"
             imgwrong.style.display = "none"
             
-            //TODO SENT the checkCompled in the localstorage
             localStorage.setItem('levelsComplete', JSON.stringify(this.currentLevel + 1));
             setTimeout(function() {
                 location.href = "../"

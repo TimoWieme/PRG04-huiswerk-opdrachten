@@ -9,29 +9,28 @@ function getQuestions()
             "id" => 1,
             "name" => "aap",
             "correctAnswer" => "aa",
-            "WrongAnswer" => ["a", "oe"]
-            "image" => "",
+            "WrongAnswer" => ["a", "oe"],
+            "image" => ""
         ],
         [
             "id" => 2,
             "name" => "kip",
-            "image" => "",
+            "image" => ""
         ],
         [
             "id" => 3,
             "name" => "haai",
-            "image" => "",
+            "image" => ""
         ],
         [
             "id" => 4,
             "name" => "leeuw",
-            "image" => "",
+            "image" => ""
         ],
         [
             "id" => 5,
             "name" => "tijger",
-            "image" => "",
+            "image" => ""
         ]
     ];
 }
-
