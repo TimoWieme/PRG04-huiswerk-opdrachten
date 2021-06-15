@@ -1,4 +1,5 @@
-export class Level {
+"use strict";
+class Level {
     constructor() {
         this.completed = false;
         this.currentLevel = 0;

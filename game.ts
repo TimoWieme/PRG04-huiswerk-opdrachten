@@ -1,25 +1,26 @@
-import { Speech } from "./speech.js";
+// import { Speech } from "./speech.js";
 
-export class Game {
+class Game {
     private levelContainer : HTMLElement | null
     private allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     private background = ["images/jungle.jpeg", "images/ice.jpeg"]
     private currentLevel : number = 0
     private tempNumber : any
-    private speech : Speech
+    // private speech : Speech
     private webserviceURL : string = 'webservice/index.php'
     //private quoteURL = 'https://animechan.vercel.app/api/quotes/anime?title=naruto'
 
 
     
     constructor() {
-        this.speech = new Speech()
+        //TODO Make speech work
+        // this.speech = new Speech()
         console.log("Hey");
         window.addEventListener("load", (e:Event) => this.init())
     }
 
     init(){
-        this.speech.speak("Alles is klaar voor gebruik")
+        // this.speech.speak("Alles is klaar voor gebruik")
         console.log("Page is Loaded");
 
         //making variables of the div's 
@@ -40,7 +41,6 @@ export class Game {
     }
 
     fetchQuestions(){
-        this.speech.speak("Alles is klaar voor gebruik")
         console.log("Fetching data");
         fetch(this.webserviceURL)
             .then((response) => {
