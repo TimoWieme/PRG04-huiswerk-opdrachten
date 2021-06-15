@@ -1,14 +1,16 @@
-"use strict";
-class Game {
+import { Speech } from "./speech.js";
+export class Game {
     constructor() {
         this.allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         this.background = ["images/jungle.jpeg", "images/ice.jpeg"];
         this.currentLevel = 0;
         this.webserviceURL = 'webservice/index.php';
+        this.speech = new Speech();
         console.log("Hey");
         window.addEventListener("load", (e) => this.init());
     }
     init() {
+        this.speech.speak("Alles is klaar voor gebruik");
         console.log("Page is Loaded");
         let main = document.getElementById("main");
         this.levelContainer = document.querySelector("#levelsDiv");
@@ -22,6 +24,7 @@ class Game {
         this.levelsLoop();
     }
     fetchQuestions() {
+        this.speech.speak("Alles is klaar voor gebruik");
         console.log("Fetching data");
         fetch(this.webserviceURL)
             .then((response) => {
@@ -38,7 +41,6 @@ class Game {
         if (storedstring) {
             let storedData = JSON.parse(storedstring);
             this.currentLevel = Number(storedData);
-            console.log(this.currentLevel);
         }
         else {
             this.currentLevel = 0;
@@ -58,7 +60,6 @@ class Game {
         levelDiv.dataset.index = index + 1;
         levelDiv.innerText = this.allLevels[index];
         if (this.currentLevel < index) {
-            console.log(index);
             levelDiv.style.backgroundImage = `url("images/lock.png"), url("${this.background[index]}")`;
         }
         else {

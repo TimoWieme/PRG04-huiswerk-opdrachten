@@ -1,5 +1,4 @@
-"use strict";
-class Level {
+export class Level {
     constructor() {
         this.completed = false;
         this.currentLevel = 0;
@@ -12,6 +11,11 @@ class Level {
         console.log(storedstring);
         this.currentLevel = Number(storedstring);
         this.fetchQuestions();
+        let title = document.getElementById("title");
+        let level = document.createElement("h1");
+        level.classList.add("title");
+        level.innerHTML = `Level ${this.currentLevel + 1}`;
+        title === null || title === void 0 ? void 0 : title.appendChild(level);
         switch (this.currentLevel) {
             case 0:
                 this.answerA.setAttribute("value", "AA");

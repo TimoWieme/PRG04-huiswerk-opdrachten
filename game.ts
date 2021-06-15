@@ -1,20 +1,25 @@
-class Game {
-    levelContainer : HTMLElement | null
-    allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    background = ["images/jungle.jpeg", "images/ice.jpeg"]
-    currentLevel : number = 0
-    tempNumber : any
-    webserviceURL : string = 'webservice/index.php'
-    // quoteURL = 'https://animechan.vercel.app/api/quotes/anime?title=naruto'
+import { Speech } from "./speech.js";
+
+export class Game {
+    private levelContainer : HTMLElement | null
+    private allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    private background = ["images/jungle.jpeg", "images/ice.jpeg"]
+    private currentLevel : number = 0
+    private tempNumber : any
+    private speech : Speech
+    private webserviceURL : string = 'webservice/index.php'
+    //private quoteURL = 'https://animechan.vercel.app/api/quotes/anime?title=naruto'
 
 
     
     constructor() {
+        this.speech = new Speech()
         console.log("Hey");
         window.addEventListener("load", (e:Event) => this.init())
     }
 
     init(){
+        this.speech.speak("Alles is klaar voor gebruik")
         console.log("Page is Loaded");
 
         //making variables of the div's 
@@ -35,6 +40,7 @@ class Game {
     }
 
     fetchQuestions(){
+        this.speech.speak("Alles is klaar voor gebruik")
         console.log("Fetching data");
         fetch(this.webserviceURL)
             .then((response) => {
@@ -52,7 +58,6 @@ class Game {
         if (storedstring){
             let storedData = JSON.parse(storedstring)
             this.currentLevel = Number(storedData)
-            console.log(this.currentLevel);
         } else {
             this.currentLevel = 0
         }
@@ -77,7 +82,6 @@ class Game {
         //add Text in levelDiv
         levelDiv.innerText = this.allLevels[index]
         if (this.currentLevel < index) {
-            console.log(index);
             levelDiv.style.backgroundImage = `url("images/lock.png"), url("${this.background[index]}")`
         } else {
             levelDiv.style.backgroundImage = `url(), url("${this.background[index]}")`

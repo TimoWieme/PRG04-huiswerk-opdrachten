@@ -1,4 +1,4 @@
-class Level {
+export class Level {
     completed = false
     currentLevel = 0
 
@@ -20,6 +20,14 @@ class Level {
         //TODO GET THE QUESTIONS 
         this.fetchQuestions()
         
+        // get the Title ID
+        let title = document.getElementById("title")
+        // Create the Title for the level + the Class
+        let level = document.createElement("h1")
+        level.classList.add("title")
+        level.innerHTML = `Level ${this.currentLevel + 1}`
+        //append Title to page
+        title?.appendChild(level)
         
         switch (this.currentLevel) {
             //letters aanpassen 
@@ -45,7 +53,7 @@ class Level {
         }
     }
 
-    //TODO Fix fetch Error
+    // Fetch not working in live server!!
     fetchQuestions(){
         console.log("Fetching data");
         fetch(this.webserviceURL)
