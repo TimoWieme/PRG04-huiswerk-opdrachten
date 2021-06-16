@@ -2,7 +2,7 @@
 class Game {
     constructor() {
         this.allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        this.background = ["images/jungle.jpeg", "images/ice.jpeg", "images/savanna.jpeg", "images/ocean.jpeg"];
+        this.background = ["images/jungle.jpeg", "images/savanna.jpeg", "images/plains.jpeg", "images/underground.jpeg", "images/beach.jpeg", "images/ocean.jpeg", "images/sky.jpeg", "images/forest.jpeg", "images/ice.jpeg", "images/tundra.jpeg"];
         this.currentLevel = 0;
         this.webserviceURL = 'webservice/index.php';
         console.log("Page is Loading!!");

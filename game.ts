@@ -1,7 +1,7 @@
 class Game {
     private levelContainer : HTMLElement | null
     private allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    private background = ["images/jungle.jpeg", "images/ice.jpeg", "images/savanna.jpeg", "images/ocean.jpeg"]
+    private background = ["images/jungle.jpeg", "images/savanna.jpeg", "images/plains.jpeg", "images/underground.jpeg", "images/beach.jpeg", "images/ocean.jpeg", "images/sky.jpeg", "images/forest.jpeg", "images/ice.jpeg", "images/tundra.jpeg"]
     private currentLevel : number = 0
     private tempNumber : any
     private webserviceURL : string = 'webservice/index.php'
