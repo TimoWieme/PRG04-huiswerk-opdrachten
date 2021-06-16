@@ -1,26 +1,18 @@
-// import { Speech } from "./speech.js";
-
 class Game {
     private levelContainer : HTMLElement | null
     private allLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    private background = ["images/jungle.jpeg", "images/ice.jpeg"]
+    private background = ["images/jungle.jpeg", "images/savanna.jpeg", "images/plains.jpeg", "images/underground.jpeg", "images/beach.jpeg", "images/ocean.jpeg", "images/sky.jpeg", "images/forest.jpeg", "images/ice.jpeg", "images/tundra.jpeg"]
     private currentLevel : number = 0
     private tempNumber : any
-    // private speech : Speech
     private webserviceURL : string = 'webservice/index.php'
-    //private quoteURL = 'https://animechan.vercel.app/api/quotes/anime?title=naruto'
-
 
     
     constructor() {
-        //TODO Make speech work
-        // this.speech = new Speech()
-        console.log("Hey");
+        console.log("Page is Loading!!");
         window.addEventListener("load", (e:Event) => this.init())
     }
 
     init(){
-        // this.speech.speak("Alles is klaar voor gebruik")
         console.log("Page is Loaded");
 
         //making variables of the div's 
