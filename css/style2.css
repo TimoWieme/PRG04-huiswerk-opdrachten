@@ -1,11 +1,11 @@
 body, html {
   background-image: url("/images/achtergrond-savanne.jpg");
-   /* Full height */
-   height: 100%; 
-   /* Center and scale the image nicely */
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
+  /* Full height */
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
 }
 
@@ -19,7 +19,7 @@ body, html {
 
 #talkingNwavingTiger {
   margin-left: 1100px;
-  margin-top:-20px;
+  margin-top:-100px;
   position: relative;
   width: 400px;
   height: 400px;
@@ -39,4 +39,19 @@ body, html {
   padding: 10px;
   background-color: lightgray;
   opacity: .8;
+}
+
+button{
+  margin-top: 20px;
+  margin-left: 650px;
+  padding: 10px 25px;
+  font-size: 22px;
+  line-height: 40px;
+  min-width: 150px;
+  text-align: center;
+  cursor: pointer;
+  background: orange;
+  border-radius: 5px;
+  border: 0px;
+  height: 60px;
 }
