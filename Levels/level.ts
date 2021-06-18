@@ -1,6 +1,7 @@
 class Level {
     completed = false
     currentLevel = 0
+    images = ["../images/aap2.jpg", "../images/vos.jpg"]
 
     webserviceURL : string = '../webservice/index.php';
 
@@ -28,6 +29,13 @@ class Level {
         level.innerHTML = `Level ${this.currentLevel + 1}`
         //append Title to page
         title?.appendChild(level)
+
+        let fotodiv = document.getElementById("foto")
+        let img = document.createElement('img')
+        img.classList.add("foto")
+        img.setAttribute('src', `${this.images[this.currentLevel]}`)
+        fotodiv?.appendChild(img)
+        console.log(img)
         
         switch (this.currentLevel) {
             //letters aanpassen 
@@ -37,9 +45,9 @@ class Level {
                 this.answerC!.setAttribute("value", "OE")        
                 break;
             case 1:
-                this.answerA!.setAttribute("value", "OO")
-                this.answerB!.setAttribute("value", "BB")
-                this.answerC!.setAttribute("value", "CC")
+                this.answerA!.setAttribute("value", "O")
+                this.answerB!.setAttribute("value", "E")
+                this.answerC!.setAttribute("value", "I")
                 break;
             default:
                 break;

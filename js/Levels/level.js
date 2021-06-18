@@ -3,6 +3,7 @@ class Level {
     constructor() {
         this.completed = false;
         this.currentLevel = 0;
+        this.images = ["../images/aap2.jpg", "../images/vos.jpg"];
         this.webserviceURL = '../webservice/index.php';
         this.answerA = document.getElementById("a");
         this.answerB = document.getElementById("b");
@@ -17,6 +18,12 @@ class Level {
         level.classList.add("title");
         level.innerHTML = `Level ${this.currentLevel + 1}`;
         title === null || title === void 0 ? void 0 : title.appendChild(level);
+        let fotodiv = document.getElementById("foto");
+        let img = document.createElement('img');
+        img.classList.add("foto");
+        img.setAttribute('src', `${this.images[this.currentLevel]}`);
+        fotodiv === null || fotodiv === void 0 ? void 0 : fotodiv.appendChild(img);
+        console.log(img);
         switch (this.currentLevel) {
             case 0:
                 this.answerA.setAttribute("value", "AA");
@@ -24,9 +31,9 @@ class Level {
                 this.answerC.setAttribute("value", "OE");
                 break;
             case 1:
-                this.answerA.setAttribute("value", "OO");
-                this.answerB.setAttribute("value", "BB");
-                this.answerC.setAttribute("value", "CC");
+                this.answerA.setAttribute("value", "O");
+                this.answerB.setAttribute("value", "E");
+                this.answerC.setAttribute("value", "I");
                 break;
             default:
                 break;
