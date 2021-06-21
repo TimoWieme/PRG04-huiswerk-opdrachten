@@ -108,9 +108,6 @@ class Game {
             window.location.href = "Levels"
         }
     }
-<<<<<<< HEAD
-    
-=======
 
     //redirect to hulp page
     hulpPage(e:MouseEvent){
@@ -131,6 +128,5 @@ class Game {
         tigerdiv!.style.backgroundPosition = `${pos}px 0px`
 
     }
->>>>>>> 96b5ad65ad0554866b04f44a4f9eaa5cd246a176
 }
 new Game()

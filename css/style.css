@@ -214,18 +214,3 @@ row-gap: 10px;
     background: transparent url("../images/wavingtiger.png") 0 0 no-repeat;
     animation: talking 0.9s steps(4) infinite;
   }
-
-  @keyframes talking {
-    100% { background-position: -1600px 0px;}
-  }
-
-
-
-    @media screen and (min-width:1360px) {
-         .tigerButton { display:none; }
-    }
-
-    @media screen and (max-width:1359px) {
-        .tigerButton { display:inline-block; }
-    }
-    
