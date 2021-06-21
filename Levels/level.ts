@@ -1,18 +1,18 @@
 class Level {
-    completed = false
-    currentLevel = 0
-    images = ["../images/aap2.jpg", "../images/vos.jpg", "../images/haai.png"]
+    private completed = false
+    private currentLevel = 0
+    private images = ["../images/aap2.jpg", "../images/vos.jpg", "../images/haai.png"]
     private background = ["../images/jungle.jpeg", "../images/savanna.jpeg", "../images/ocean.jpeg", "../images/beach.jpeg", "../images/plains.jpeg", "../images/underground.jpeg", "../images/sky.jpeg", "../images/forest.jpeg", "../images/ice.jpeg", "../images/tundra.jpeg"]
 
 
-    webserviceURL : string = '../webservice/index.php';
+    private webserviceURL : string = '../webservice/index.php';
 
-    div:HTMLElement
-    answerA = document.getElementById("a")
-    answerB = document.getElementById("b")
-    answerC = document.getElementById("c")
+    private div:HTMLElement
+    private answerA = document.getElementById("a")
+    private answerB = document.getElementById("b")
+    private answerC = document.getElementById("c")
 
-    questionsDiv = document.getElementById("questions")
+    private questionsDiv = document.getElementById("questions")
 
     constructor() {
         let storedstring = localStorage.getItem('currentLevel')

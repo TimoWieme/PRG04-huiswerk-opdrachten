@@ -5,6 +5,10 @@ class Game {
         this.background = ["../images/jungle.jpeg", "../images/savanna.jpeg", "../images/ocean.jpeg", "../images/beach.jpeg", "../images/plains.jpeg", "../images/underground.jpeg", "../images/sky.jpeg", "../images/forest.jpeg", "../images/ice.jpeg", "../images/tundra.jpeg"];
         this.currentLevel = 0;
         this.webserviceURL = 'webservice/index.php';
+        this.animFrames = 4;
+        this.frame = 0;
+        this.frameWidth = 400;
+        this.tigerFPS = 0;
         console.log("Page is Loading!!");
         window.addEventListener("load", (e) => this.init());
     }
@@ -14,6 +18,8 @@ class Game {
         let main = document.getElementById("main");
         this.levelContainer = document.querySelector("#levelsDiv");
         main === null || main === void 0 ? void 0 : main.addEventListener("click", (e) => this.level(e));
+        let tigerdiv = document.getElementById("wavingTiger");
+        tigerdiv === null || tigerdiv === void 0 ? void 0 : tigerdiv.addEventListener("click", (e) => this.hulpPage(e));
         if (typeof window.localStorage === "undefined") {
             console.error('Local storage is not available in your browser');
             return;
@@ -21,6 +27,7 @@ class Game {
         this.fetchQuestions();
         this.checkProgress();
         this.levelsLoop();
+        this.gameLoop();
     }
     fetchQuestions() {
         console.log("Fetching data");
@@ -76,6 +83,23 @@ class Game {
             localStorage.setItem('currentLevel', this.currentLevel.toString());
             window.location.href = "Levels";
         }
+    }
+    hulpPage(e) {
+        window.location.href = "tussenlevel.html";
+    }
+    gameLoop() {
+        this.tigerUpdate();
+        requestAnimationFrame(() => this.gameLoop());
+    }
+    tigerUpdate() {
+        let tigerdiv = document.getElementById("wavingTiger");
+        this.tigerFPS++;
+        if (this.tigerFPS % 20 == 0)
+            this.frame++;
+        if (this.frame > this.animFrames)
+            this.frame = 0;
+        let pos = 0 - (this.frame * this.frameWidth);
+        tigerdiv.style.backgroundPosition = `${pos}px 0px`;
     }
 }
 new Game();

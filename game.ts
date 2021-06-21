@@ -6,6 +6,11 @@ class Game {
     private tempNumber : any
     private webserviceURL : string = 'webservice/index.php'
 
+    private animFrames : number = 4
+    private frame : number = 0
+    private frameWidth : number  = 400
+    private tigerFPS : number  = 0
+
     
     constructor() {
         console.log("Page is Loading!!");
@@ -21,16 +26,20 @@ class Game {
         this.levelContainer = document.querySelector("#levelsDiv")
         //add event listener to check if a button is clicked
         main?.addEventListener("click", (e:MouseEvent) => this.level(e)) 
+
+        let tigerdiv = document.getElementById("wavingTiger")
+        tigerdiv?.addEventListener("click", (e:MouseEvent) => this.hulpPage(e))
     
         //Check if LocalStorage is available in the browser
         if (typeof window.localStorage === "undefined") {
             console.error('Local storage is not available in your browser');
             return;
         }
-
+        
         this.fetchQuestions()
         this.checkProgress()
         this.levelsLoop()
+        this.gameLoop()
     }
 
     fetchQuestions(){
@@ -99,6 +108,29 @@ class Game {
             window.location.href = "Levels"
         }
     }
+<<<<<<< HEAD
     
+=======
+
+    //redirect to hulp page
+    hulpPage(e:MouseEvent){
+        window.location.href = "tussenlevel.html"
+    }
+
+    gameLoop(){
+        this.tigerUpdate()
+        requestAnimationFrame(() => this.gameLoop())
+    }
+
+    tigerUpdate() {
+        let tigerdiv = document.getElementById("wavingTiger")
+        this.tigerFPS++
+        if(this.tigerFPS % 20 == 0) this.frame++
+        if(this.frame > this.animFrames) this.frame = 0
+        let pos = 0 - (this.frame * this.frameWidth)
+        tigerdiv!.style.backgroundPosition = `${pos}px 0px`
+
+    }
+>>>>>>> 96b5ad65ad0554866b04f44a4f9eaa5cd246a176
 }
 new Game()
