@@ -99,5 +99,6 @@ class Game {
             window.location.href = "Levels"
         }
     }
+    
 }
 new Game()

@@ -56,6 +56,32 @@ p{
 	top: 5px;
 }
 
+.tigerButton {
+    position: absolute;
+    margin: auto;
+    /* left: 62%;
+    top: 41%; */
+    background-color:#4a86ac;
+    font-family:Arial;
+    text-align: center;
+    color:#ffffff;
+    width: 9em;
+    height: 4.8em;
+    border-radius:12px;    
+    border-color: transparent transparent transparent #000;
+    font-size:17px;
+    padding-top: 30px;
+    cursor:pointer;
+}
+
+.tigerButton:hover {
+    background-color: rgba(0, 0, 0, .5);
+    opacity: .75;
+}
+.tigerButton:active {
+    position:relative;
+	top: 5px;
+}
 
 /* Levels */
 #levelsDiv{
@@ -92,7 +118,7 @@ p{
     }
 }
 .levels {
-	border-radius:10px;
+    border-radius:10px;
     border-color: orange;
 	display:inline-block;
     background-color: #ffa500;
@@ -106,13 +132,13 @@ p{
     background-size: contain, cover;
     background-repeat: no-repeat;
     background-position: center;
-
+    
 }
 .levels:hover {
-	background-color:lightgreen;
+    background-color:lightgreen;
 }
 .levels:active {
-	position:relative;
+    position:relative;
 	top:1px;
 }
 
@@ -188,3 +214,18 @@ row-gap: 10px;
     background: transparent url("../images/wavingtiger.png") 0 0 no-repeat;
     animation: talking 0.9s steps(4) infinite;
   }
+
+  @keyframes talking {
+    100% { background-position: -1600px 0px;}
+  }
+
+
+
+    @media screen and (min-width:1360px) {
+         .tigerButton { display:none; }
+    }
+
+    @media screen and (max-width:1359px) {
+        .tigerButton { display:inline-block; }
+    }
+    

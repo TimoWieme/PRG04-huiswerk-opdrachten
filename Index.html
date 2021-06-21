@@ -7,8 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/game.js"></script>
     <title>Lezen met Beesten</title>
-    <!-- Auto Refresh -->
-    <meta http-equiv="refresh" content="30">
 </head>
 <body>
     <main id="main" class="main">
@@ -18,11 +16,12 @@
             <div>
                 <div id="start" class="play-button-outside">
                     <div class="play-button"></div>
-                </div>
+                    <div class="tigerButton"> Theo de Tijger </div>
+            </div>
                 
             </div>
             <div id="levelsDiv" class="levelsBG"></div>
-            <div id="wavingTiger"></div>
+            <div onclick="location.href='./tussenlevel.html';" style="cursor: pointer;" id="wavingTiger" class="wavingTiger"></div>
         <!-- <script src="./js/tts.js"></script> -->
     </main>
 </body>
