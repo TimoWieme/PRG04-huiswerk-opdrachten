@@ -87,13 +87,6 @@ class Game {
     hulpPage(e) {
         window.location.href = "tussenlevel.html";
     }
-    playAudio(e) {
-        console.log(e);
-        let audio = new Audio();
-        audio.src = "./audio/theo-audio.mp3";
-        audio.load();
-        audio.play();
-    }
     gameLoop() {
         this.tigerUpdate();
         requestAnimationFrame(() => this.gameLoop());

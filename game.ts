@@ -109,18 +109,9 @@ class Game {
         }
     }
 
-    //TODO choose
     //redirect to hulp page
     hulpPage(e:MouseEvent){
         window.location.href = "tussenlevel.html"
-    }
-    // or play audio on page
-    playAudio(e:MouseEvent){
-        console.log(e);
-        let audio = new Audio();
-        audio.src = "./audio/theo-audio.mp3"
-        audio.load()
-        audio.play()
     }
 
     gameLoop(){
