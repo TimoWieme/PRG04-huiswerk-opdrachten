@@ -8,7 +8,6 @@ class TussenLevel {
         this.playAudio()
     }
 
-
     playAudio(){
         let audio = new Audio();
         audio.src = "./audio/theo-audio.mp3"

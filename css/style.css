@@ -1,5 +1,7 @@
 body{
     background-color: #58a6d7;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .title{
@@ -36,7 +38,7 @@ p{
 }
 .play-button-outside{
     margin: auto;
-    margin-bottom: 80px;
+    margin-bottom: 0px;
     border-radius: 12px;
     width: 10em;
     height: 5em;
@@ -151,8 +153,6 @@ row-gap: 10px;
     margin: 6px;
   }
 
-     
-
 .foto {
     display: block;
     margin-top: 100px;
@@ -160,13 +160,21 @@ row-gap: 10px;
     margin-right: auto;
     width: auto;
     padding:1px;
-    border:1px solid #021a40;
-    background-color:black;
-
+    border:5px solid #021a40;
+    background-color:white;
 }
 .img-good{
     display: none;
     margin-left: auto;
     margin-right: auto;
     width: 25%;
+}
+.bg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    padding:1px;
+    border:5px solid #021a40;
+    background-color: #FFECCC;
 }

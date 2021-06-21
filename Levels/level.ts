@@ -1,7 +1,9 @@
 class Level {
     completed = false
     currentLevel = 0
-    images = ["../images/aap2.jpg", "../images/vos.jpg"]
+    images = ["../images/aap2.jpg", "../images/vos.jpg", "../images/haai.png"]
+    private background = ["../images/jungle.jpeg", "../images/savanna.jpeg", "../images/ocean.jpeg", "../images/beach.jpeg", "../images/plains.jpeg", "../images/underground.jpeg", "../images/sky.jpeg", "../images/forest.jpeg", "../images/ice.jpeg", "../images/tundra.jpeg"]
+
 
     webserviceURL : string = '../webservice/index.php';
 
@@ -15,11 +17,14 @@ class Level {
     constructor() {
         let storedstring = localStorage.getItem('currentLevel')
         console.log(storedstring);
-        this.currentLevel = Number(storedstring)
-        
+        this.currentLevel = Number(storedstring)        
 
         //TODO GET THE QUESTIONS 
         this.fetchQuestions()
+
+        //Get the background
+        document.body.style.backgroundImage = `url(${this.background[this.currentLevel]})`
+        
         
         // get the Title ID
         let title = document.getElementById("title")
@@ -45,9 +50,14 @@ class Level {
                 this.answerC!.setAttribute("value", "OE")        
                 break;
             case 1:
-                this.answerA!.setAttribute("value", "O")
-                this.answerB!.setAttribute("value", "E")
+                this.answerA!.setAttribute("value", "E")
+                this.answerB!.setAttribute("value", "O")
                 this.answerC!.setAttribute("value", "I")
+                break;
+            case 2:
+                this.answerA!.setAttribute("value", "OO")
+                this.answerB!.setAttribute("value", "EE")
+                this.answerC!.setAttribute("value", "AA")
                 break;
             default:
                 break;
@@ -59,6 +69,7 @@ class Level {
             let storedData = JSON.parse(storedstring)
             // More Code ...
         }
+
     }
 
     // Fetch not working in live server!!
@@ -96,8 +107,17 @@ class Level {
             console.log("Succes!!!");
             imggood.style.display = "block"
             imgwrong.style.display = "none"
-            
-            localStorage.setItem('levelsComplete', JSON.stringify(this.currentLevel + 1));
+
+
+            //fetch levelsComplete
+            let string = localStorage.getItem("levelsComplete")
+            //if localstorage is higher than completed number don't store
+            if(Number(string) > this.currentLevel){
+                console.log("kleiner dan");
+            } else {
+                console.log("Groter dan"); 
+                localStorage.setItem('levelsComplete', JSON.stringify(this.currentLevel + 1));
+            }
             setTimeout(function() {
                 location.href = "../"
             }, 3000)

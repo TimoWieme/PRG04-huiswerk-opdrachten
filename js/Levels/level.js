@@ -3,7 +3,8 @@ class Level {
     constructor() {
         this.completed = false;
         this.currentLevel = 0;
-        this.images = ["../images/aap2.jpg", "../images/vos.jpg"];
+        this.images = ["../images/aap2.jpg", "../images/vos.jpg", "../images/haai.png"];
+        this.background = ["../images/jungle.jpeg", "../images/savanna.jpeg", "../images/ocean.jpeg", "../images/beach.jpeg", "../images/plains.jpeg", "../images/underground.jpeg", "../images/sky.jpeg", "../images/forest.jpeg", "../images/ice.jpeg", "../images/tundra.jpeg"];
         this.webserviceURL = '../webservice/index.php';
         this.answerA = document.getElementById("a");
         this.answerB = document.getElementById("b");
@@ -13,6 +14,7 @@ class Level {
         console.log(storedstring);
         this.currentLevel = Number(storedstring);
         this.fetchQuestions();
+        document.body.style.backgroundImage = `url(${this.background[this.currentLevel]})`;
         let title = document.getElementById("title");
         let level = document.createElement("h1");
         level.classList.add("title");
@@ -31,9 +33,14 @@ class Level {
                 this.answerC.setAttribute("value", "OE");
                 break;
             case 1:
-                this.answerA.setAttribute("value", "O");
-                this.answerB.setAttribute("value", "E");
+                this.answerA.setAttribute("value", "E");
+                this.answerB.setAttribute("value", "O");
                 this.answerC.setAttribute("value", "I");
+                break;
+            case 2:
+                this.answerA.setAttribute("value", "OO");
+                this.answerB.setAttribute("value", "EE");
+                this.answerC.setAttribute("value", "AA");
                 break;
             default:
                 break;
@@ -72,7 +79,14 @@ class Level {
             console.log("Succes!!!");
             imggood.style.display = "block";
             imgwrong.style.display = "none";
-            localStorage.setItem('levelsComplete', JSON.stringify(this.currentLevel + 1));
+            let string = localStorage.getItem("levelsComplete");
+            if (Number(string) > this.currentLevel) {
+                console.log("kleiner dan");
+            }
+            else {
+                console.log("Groter dan");
+                localStorage.setItem('levelsComplete', JSON.stringify(this.currentLevel + 1));
+            }
             setTimeout(function () {
                 location.href = "../";
             }, 3000);
