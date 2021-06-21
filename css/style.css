@@ -178,3 +178,13 @@ row-gap: 10px;
     border:5px solid #021a40;
     background-color: #FFECCC;
 }
+
+#wavingTiger {
+    margin-left: 1100px;
+    margin-top:-550px;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: transparent url("../images/wavingtiger.png") 0 0 no-repeat;
+    animation: talking 0.9s steps(4) infinite;
+  }
