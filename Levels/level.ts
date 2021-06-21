@@ -92,7 +92,7 @@ class Level {
         let knop = e.target as HTMLInputElement
         console.log(knop.defaultValue)
         //TODO ARRAY OF RIGHT ANSWERS
-        if (knop.defaultValue == "AA" || knop.defaultValue == "OO"){
+        if (knop.defaultValue == "AA" || knop.defaultValue == "O"){
             console.log("Succes!!!");
             imggood.style.display = "block"
             imgwrong.style.display = "none"

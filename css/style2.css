@@ -1,5 +1,5 @@
 body, html {
-  background-image: url("/images/achtergrond-savanne.jpg");
+  background-image: url("../images/achtergrond-savanne.jpg");
   /* Full height */
   height: 100%; 
   /* Center and scale the image nicely */

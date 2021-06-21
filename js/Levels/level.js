@@ -68,7 +68,7 @@ class Level {
         console.log(e);
         let knop = e.target;
         console.log(knop.defaultValue);
-        if (knop.defaultValue == "AA" || knop.defaultValue == "OO") {
+        if (knop.defaultValue == "AA" || knop.defaultValue == "O") {
             console.log("Succes!!!");
             imggood.style.display = "block";
             imgwrong.style.display = "none";
