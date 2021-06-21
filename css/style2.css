@@ -50,6 +50,23 @@ button{
   min-width: 150px;
   text-align: center;
   cursor: pointer;
+  justify-content: center;
+  background: orange;
+  border-radius: 5px;
+  border: 0px;
+  height: 60px;
+}
+
+.level1Button{
+  margin-top: 20px;
+  margin-left: 680px;
+  padding: 10px 25px;
+  font-size: 22px;
+  line-height: 40px;
+  min-width: 150px;
+  text-align: center;
+  cursor: pointer;
+  justify-content: center;
   background: orange;
   border-radius: 5px;
   border: 0px;

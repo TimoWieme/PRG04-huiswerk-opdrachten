@@ -1,8 +1,12 @@
 var audio = document.getElementById('audio');
 var playPauseBTN = document.getElementById('playPauseBTN');
 var count = 0;
+let playAudio = document.getElementById("playPauseBTN")
+let level1Button = document.getElementById('level1Button')
 
-function playPause(){
+
+playAudio.addEventListener('click', function(){
+    console.log("Button is ingedrukt")
     if(count == 0){
         count = 1;
         audio.play();
@@ -12,4 +16,9 @@ function playPause(){
         audio.pause();
         playPauseBTN.innerHTML = "Speel het geluid &#9658;";
     }
-}
+})
+
+level1Button.addEventListener('click', function(){
+    console.log("Button clicked")
+    window.location.replace("./levels/index.html")
+})
