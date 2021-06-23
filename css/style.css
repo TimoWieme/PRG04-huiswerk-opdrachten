@@ -38,7 +38,7 @@ p{
 }
 .play-button-outside{
     margin: auto;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     border-radius: 12px;
     width: 10em;
     height: 5em;
@@ -61,7 +61,6 @@ p{
 #levelsDiv{
     background-color:#4a86ac;
 	border:2px solid orange;
-    margin-top: 20px;
     display: grid;
     /* kolommen each fr is a card */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -80,14 +79,15 @@ p{
 	padding:18px 14px;
 	text-decoration:none;
 }
+/* TODO MEDIA Grid werkend maken */
 @media (max-width: 880px) {
-    #cards {
+    #levelsDiv {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
 @media (max-width: 705px) {
-    #cards {
+    #levelsDiv {
         grid-template-columns: 1fr 1fr;
     }
 }

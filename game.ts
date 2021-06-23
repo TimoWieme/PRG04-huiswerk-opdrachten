@@ -78,7 +78,7 @@ class Game {
         levelDiv.classList.add("levels")
     
         levelDiv.classList.add("locked")
-        levelDiv.classList.add(`${this.background[index]}`)
+        // levelDiv.classList.add(`${this.background[index]}`)
         //add a dataset with value from the For loop
         levelDiv.dataset.index = index + 1
         //add Text in levelDiv
@@ -86,7 +86,7 @@ class Game {
         if (this.currentLevel < index) {
             levelDiv.style.backgroundImage = `url("images/lock.png"), url("${this.background[index]}")`
         } else {
-            levelDiv.style.backgroundImage = `url(), url("${this.background[index]}")`
+            levelDiv.style.backgroundImage = `url(" "), url("${this.background[index]}")`
         }
         //Append levelDiv to the levelContainer
         this.levelContainer?.appendChild(levelDiv)
