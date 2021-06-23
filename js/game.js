@@ -14,7 +14,7 @@ class Game {
     }
     init() {
         console.log("Page is Loaded");
-        document.body.style.backgroundImage = "url(../images/background.jpeg)";
+        document.body.style.backgroundImage = "url(../images/achtergrond2.jpeg)";
         let main = document.getElementById("main");
         this.levelContainer = document.querySelector("#levelsDiv");
         main === null || main === void 0 ? void 0 : main.addEventListener("click", (e) => this.level(e));
