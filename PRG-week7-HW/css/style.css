@@ -1,0 +1,34 @@
+body {
+    background-color: #70CF51;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    margin:0px; padding:0px;
+}
+
+background, pirate, bomb, player, pirateship{
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+player {
+    background-image: url(../images/player2.png);
+    width:65px; height: 75px;
+}
+
+pirate{
+    background-image: url(../images/pirate.png);
+    width:65px; height: 75px;
+}
+
+pirateship{
+    background-image: url(../images/pirateship2.png);
+    width: 180px; height: 110px;
+}
+
+background {
+	background-image: url(../images/achtergrond.png);
+    width:100%; height: 100%;
+    background-size: cover;
+}
